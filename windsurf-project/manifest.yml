@@ -1,0 +1,28 @@
+# Slack App Manifest — paste this into https://api.slack.com/apps > Create New App > From a manifest
+display_information:
+  name: Mahjong Night
+  description: Schedule mahjong nights and let your org RSVP with one click.
+  background_color: "#7a1f1f"
+features:
+  bot_user:
+    display_name: Mahjong Night
+    always_online: true
+  slash_commands:
+    - command: /mahjong
+      description: Schedule a mahjong night or get help
+      usage_hint: "[schedule|help]"
+      should_escape: false
+oauth_config:
+  scopes:
+    bot:
+      - chat:write
+      - chat:write.public
+      - commands
+      - im:write
+      - users:read
+settings:
+  interactivity:
+    is_enabled: true
+  socket_mode_enabled: true
+  org_deploy_enabled: false
+  token_rotation_enabled: false
